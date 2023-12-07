@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import AccountMenu from "../components/AccountMenu/AccountMenu";
 import ShoppingCart from "../components/ShoppingCart/ShoppingCart";
 import { getCookie } from "@/app/server";
+import './CartPage.sass'
 export default function ShoppingCartPage() {
 
 
@@ -12,13 +13,11 @@ export default function ShoppingCartPage() {
 
   let userData = getCookie("UserData");
   let userDataObj;
-  let userId = "";
   let userLogginIn = "";
 
   if (userData) {
       try {
           userDataObj = JSON.parse(userData);
-          userId = userDataObj.userId !== null ? userDataObj.userId : "";
           userLogginIn = userDataObj.logginin !== null ? userDataObj.logginin : "";
       } catch (error) {
           console.error(error);
@@ -38,7 +37,7 @@ export default function ShoppingCartPage() {
     userLogginIn === true ? setAuthStatusButton('') : setAuthStatusButton("95%")
   }
   useEffect(() =>{
-    CheckAuthStatus()
+    CheckAuthStatus();
   })
   useEffect(() => {
     document.title = 'Корзина'
@@ -49,10 +48,10 @@ export default function ShoppingCartPage() {
             <div className="container">
                 <div className="PageHeader">Мой Аккаунт</div>
                 <div className="ProfilePageWrapper">
-                <AccountMenu authStatus={authStatus} CartItem='active'/>
-                <div className="PageInfo" style={{width: `${authStatusWrapper}`}}>
-                    <ShoppingCart authStatusButton={authStatusButton}/>
-                </div>
+                  <AccountMenu authStatus={authStatus} CartItem='active'/>
+                  <div className="PageInfo" style={{width: `${authStatusWrapper}`}}>
+                      <ShoppingCart authStatusButton={authStatusButton}/>
+                  </div>
                 </div>
             </div>
         </div>

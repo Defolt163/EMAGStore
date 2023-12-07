@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react'
 import MainDropdownMenu from './components/DropDownMenu/MainDropDownMenu'
 import { useRouter } from "next/navigation";
 import Footer from './components/footer/footer'
-import { getCookie } from './server'
+import { CartDB, getCookie } from './server'
 
 
 export default function RootLayout({ children }) {
@@ -37,18 +37,20 @@ export default function RootLayout({ children }) {
 
   // получение массива корзины пользователя
   const [userCart, setUserCart] = useState([])
-    async function CartDB(){
-        await fetch(`https://65605efe83aba11d99d0b111.mockapi.io/Users/${userId}`).then((res)=>{
-        return res.json()
-    }).then((productsCart) =>{
+  /* async function CartDB(){
+      await fetch(`https://65605efe83aba11d99d0b111.mockapi.io/Users/${userId}`).then((res)=>{
+      return res.json()
+  }).then((productsCart) =>{
+      setUserCart(productsCart.cart)
+  })
+  } */
+  useEffect(()=>{
+      CartDB((productsCart)=>{
         setUserCart(productsCart.cart)
-    })
-    }
-    useEffect(()=>{
-        CartDB()
-    },[])
+      })
+  },[])
 
-    const[dropDownStatus, setDropDownStatus] = useState('')
+  const[dropDownStatus, setDropDownStatus] = useState('')
 
   
   return (

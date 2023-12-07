@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { ProductDB, addToCart, getCookie } from '@/app/server';
 
 
+
 export default function ProductCard(props){
     const { filterMeaning, specMeaning } = props;
     let [products, setProducts] = useState([])
@@ -39,7 +40,7 @@ export default function ProductCard(props){
             <div key={productItem.id} className={`ProductCard ProductCardNew + ${props.ProductCardBestSeller}`}>
               <div className='AddToCartButton' onClick={()=>{addToCart(productItem.id)}}>Добавить в корзину</div>
               <Link href={`/category/product/${productItem.id}`} className="ProductCardWrapper">
-                <div style={{background: `url(${productItem.image}) center center/cover no-repeat`}} className="ProductCardImage">
+                <div style={{background: `url(${productItem.image}) center center/cover no-repeat`}} alt={productItem.name} className="ProductCardImage">
                 </div>
                 {productItem.statusnew === true && productItem.statushot === true ? <div className="ProductStatusBar">
                     <div className="ProductStatus">New</div>

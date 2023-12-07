@@ -37,16 +37,10 @@ export default function AccountMenu(props) {
         }, []);
 
 
-    function LogOut(){
-      router.push('/')
-      localStorage.removeItem('UserData')
-      const timeout = setTimeout(() => {
-          window.location.reload();
-        }, 1000);
-    
-        // Cleanup the timeout on component unmount
-        return () => clearTimeout(timeout);
-    }
+      function deleteCookie(name) {
+          document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      }
+
     
     
     return (
@@ -66,7 +60,7 @@ export default function AccountMenu(props) {
             <Link href='/profile/cart' className={`AccountMenuItem ${props.CartItem}`}>
               Корзина
             </Link>
-            {userDataObj && userDataObj.logginin === true ? <Link href='/' className={`AccountMenuItem ${props.LogOutItem}`} onClick={()=>{LogOut()}}>Выйти из аккаунта</Link>: <Link href='/profile/register' className={`AccountMenuItem ${props.LogOutItem}`}>Зарегистрироваться или войти</Link>}
+            {userDataObj && userDataObj.logginin === true ? <Link href='/' className={`AccountMenuItem ${props.LogOutItem}`} onClick={()=>{deleteCookie()}}>Выйти из аккаунта</Link>: <Link href='/profile/register' className={`AccountMenuItem ${props.LogOutItem}`}>Зарегистрироваться или войти</Link>}
             
           </div>
         </div>

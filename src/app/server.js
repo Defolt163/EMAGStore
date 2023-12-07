@@ -1,4 +1,4 @@
-
+'use client'
 
     let userData = getCookie("UserData");
     let userDataObj;
@@ -82,6 +82,15 @@
         .catch(error => {
             console.error(error);
         });
+    }
+
+    // Получение длины массива корзины пользователя
+    export async function CartDB(callback){
+      await fetch(`https://65605efe83aba11d99d0b111.mockapi.io/Users/${userId}`).then((res)=>{
+      return res.json()
+    }).then((productsCart) =>{
+      callback(productsCart)
+    })
     }
 
     // НАСТРОЙКИ ПОЛЬЗОВАТЕЛЯ //

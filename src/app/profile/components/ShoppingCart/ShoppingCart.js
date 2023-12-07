@@ -2,6 +2,7 @@
 import { ProductDB, getCookie } from '@/app/server';
 import './ShoppingCart.sass'
 import { useEffect, useState  } from 'react';
+import Link from 'next/link'
 
 
 export default function ShoppingCart(props) {
@@ -162,7 +163,7 @@ export default function ShoppingCart(props) {
                             <div className='CartItemPrice CartItemPriceSubTotal'>{cartItem.price} $</div>
                             <div className='CartItemPrice CartItemPriceEnd'>{cartItem.price*cartItemPieces[index]} $</div>
                         </div>
-                    )):<div className='PageSubHeader'>Здесь пока ничего нет</div>}
+                    )):<div className='PageSubHeader'>{userLogginIn === true ? 'Здесь пока ничего нет' : <div>Чтобы начать покупки вам необходимо <Link href='/profile/login'>Авторизоваться</Link> или <Link href='/profile/register'>Зарегистрироваться</Link></div>}</div>}
                 </div>
             </div>
             <div className='CartDelivery'>

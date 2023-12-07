@@ -103,7 +103,7 @@ export default function Home() {
             <div key={productItem.id} className="ProductCard ProductCardNew">
               <div className='AddToCartButton' onClick={()=>{addToCart(productItem.id)}}>Добавить в корзину</div>
               <Link href={`/category/product/${productItem.id}`} className="ProductCardWrapper">
-                <div style={{background: `url(${productItem.image}) center center/cover no-repeat`}} className="ProductCardImage"></div>
+                <div style={{background: `url(${productItem.image}) center center/cover no-repeat`}} alt={productItem.name} className="ProductCardImage"></div>
                 {productItem.statusnew === true && productItem.statushot === true ? <div className="ProductStatusBar"><div className="ProductStatus">New</div><div className="ProductStatus">Hot</div></div>:
                  productItem.statusnew === true ? <div className="ProductStatusBar"><div className="ProductStatus">New</div></div>:
                  productItem.statushot === true ? <div className="ProductStatusBar"><div className="ProductStatus">Hot</div></div>: null}
