@@ -1,0 +1,83 @@
+
+.AuthPage
+    height: 100vh
+    display: flex
+    .ImageBlock
+        background: url('https://s3-alpha-sig.figma.com/img/e78c/a03e/c4ca9b1b3a2045a92edc4d4e12f768bd?Expires=1701648000&Signature=TgNj~R~hCvTEZCKLl13WchJg9g3L0OsoM6h~0ITr7sb3ikCSXurAt2DREOEUPxGUDteCgp6wB1B1YQ0WQ96TEt4i1zr6HbQP~sL63FAvcBFRHVf2dKSDXUG0-TtJscrF3kwW1WYpbDYGqr8TyJsKQvvJWVbboMGIwnVQsCyPRquz6UVyEiHRZQRT8x8WBl-ToOi~wRryQbEoKcs0huGRQR92cXjZ-k-LiwQmfO9S31ZE1o-NRRncN~9szLoVEGEJDopbq0fxeMXy36isWLxyVRUIkGREkr5gDLZ0SFoT2zgR9aS9AiUNnAFpg5KMq3IHuVPamReIeWWMrMJrrqMg5A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4') center center/cover no-repeat
+        width: 45%
+    .InputDataWrapper
+        padding-left: 5.5rem
+        width: 65%
+        display: flex
+        align-items: center
+        .InputDataBlockWrapper
+            width: 70%
+            .InputDataHeader
+                font-family: Poppins
+                font-size: 2.5rem
+                font-style: normal
+                font-weight: 500
+                line-height: 2.75rem
+                letter-spacing: -0.025rem
+            .InputDataAlReady
+                margin: 1rem 0
+                color: #6C7275
+                font-family: Inter
+                font-size: 1rem
+                font-style: normal
+                font-weight: 400
+                line-height: 1.625rem
+                a
+                    color: #38CB89
+                    font-weight: 600
+                    text-decoration: none
+            .InputDataBlock
+                display: flex
+                flex-direction: column
+                .InputData
+                    padding: 1rem 0
+                    border-top: none
+                    border-left: none
+                    border-right: none
+                    margin-bottom: 1rem
+                    &:focus-visible
+                        outline: none
+                .AuthButton
+                    cursor: pointer
+                    margin-top: 2rem
+                    border-radius: 0.5rem
+                    background: #141718
+                    color: #fff
+                    text-align: center
+                    padding: 0.62rem 0
+
+@media screen and ( max-width: 992px )
+    .MobileVer 
+        .MobileVerWrapper 
+            .MobileVerUserOpt 
+                .LinkItem
+                    &:last-child
+                        display: none
+    .AuthPage 
+        .ImageBlock
+            display: none
+        .InputDataWrapper
+            padding: 0
+            width: 100%
+            justify-content: center
+
+@media screen and ( max-width: 507px )
+    .AuthPage 
+        .InputDataWrapper
+            .InputDataBlockWrapper 
+                .InputDataHeader
+                    text-align: center
+
+@media screen and ( max-width: 383px )
+    .AuthPage 
+        .InputDataWrapper
+            .InputDataBlockWrapper 
+                .InputDataHeader
+                    font-size: 2rem
+                .InputDataAlReady
+                    font-size: 0.87rem

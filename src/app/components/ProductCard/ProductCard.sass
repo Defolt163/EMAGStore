@@ -1,0 +1,100 @@
+
+.ProductCard
+    z-index: 9
+    width: 100%
+    flex-shrink: 0
+    cursor: pointer
+    position: relative
+    .AddToCartButton
+        position: absolute
+        bottom: 8rem
+        left: 50%
+        transform: translateX(-50%)
+        transition: opacity .4s
+        opacity: 0
+        padding: 1rem 0
+        width: 90%
+        border-radius: 0.5rem
+        background-color: #141718
+        font-family: Inter
+        font-size: 1rem
+        font-style: normal
+        font-weight: 500
+        color: #fff
+        text-align: center
+        z-index: 1e+27
+    &:hover
+        .AddToCartButton
+            opacity: 1
+            transition: opacity .4s
+        .ProductCardWrapper
+            .ProductCardImage
+    &Wrapper
+        position: relative
+        color: #141718
+        text-decoration: none
+        .ProductCardImage
+            padding-bottom: 150%
+            background-color: #000
+            display: flex
+            justify-content: center
+            align-items: flex-end
+            position: relative
+        .ProductStatusBar
+            display: flex
+            flex-direction: column
+            position: absolute
+            top: 1rem
+            left: 1rem
+            .ProductStatus
+                margin-bottom: 5px
+                padding: 0.25rem 0.875rem
+                border-radius: 0.25rem
+                background-color: #fff
+        .ProductCardDescrWrapper
+            .ProductCardRating
+                margin-top: 0.75rem
+            .ProductCardName
+                margin: 0.25rem 0 0.25rem 0
+                font-family: Inter
+                font-size: 1rem
+                font-weight: 600
+                line-height: 1.63
+                text-align: left
+                color: #141718
+            .ProductCardPrice
+                font-family: Inter
+                font-size: 0.875rem
+                font-weight: 600
+                line-height: 1.57
+                text-align: left
+                color: #121212
+.ProductCardItems
+    display: flex
+    flex-wrap: wrap
+    transform: translateX(0.75rem)
+    gap: 1.5rem
+    flex-shrink: 0
+    width: 100%
+    .ProductCardBestSeller
+        flex-shrink: 0
+        width: calc( 25% - 1.5rem )
+
+@media screen and ( max-width: 992px )
+    .MainPage 
+        .BestSellersProduct 
+            .BestSellerBlock 
+                .ProductCardBestSeller
+                    width: calc(34% - 1.5rem)
+    .ProductCard
+        .AddToCartButton
+            display: none
+
+@media screen and ( max-width: 613px )
+    .MainPage 
+        .BestSellersProduct 
+            .BestSellerBlock 
+                .ProductCardBestSeller
+                    width: calc(50% - 0.5rem)
+        .ProductCardItems
+            gap: 0.5rem

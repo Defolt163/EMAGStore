@@ -1,0 +1,167 @@
+.Header
+    height: 3.75rem
+    display: flex
+    align-items: center
+    .HeaderWrapper
+        display: flex
+        justify-content: space-between
+        align-items: center
+        .Logo
+            width: 12%
+            font-family: Poppins
+            font-size: 1.5rem
+            font-weight: 500
+            font-stretch: normal
+            font-style: normal
+            line-height: 1
+            letter-spacing: normal
+            text-align: center
+            color: #000
+            text-decoration: none
+        .LinkItems
+            display: flex
+            justify-content: space-between
+            width: 40%
+            .LinkItem
+                font-family: Inter
+                font-size: 1rem
+                font-weight: 600
+                line-height: 1.71
+                text-align: left
+                color: #141718
+                text-decoration: none
+        .UserOpt
+            display: flex
+            justify-content: space-between
+            font-size: 2rem
+            width: 12%
+            .UserIco
+                cursor: pointer
+                text-decoration: none
+                color: #000
+                z-index: 2
+                .ActiveMonitor
+                    z-index: 1
+                    position: absolute
+                    left: 50%
+                    top: 50%
+                    transform: translate(-50%, -50%)
+                    width: 100%
+                    height: 100%
+                    padding: calc( 60px - 1rem ) 20px
+            .UserShopCart
+                position: relative
+                .UserShopCartIteration
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    z-index: 3
+                    position: absolute
+                    top: -.3rem
+                    right: -.5rem
+                    font-size: 1rem
+                    color: #fff
+                    width: 1.5rem
+                    height: 1.5rem
+                    border-radius: 50%
+                    background-color: #ff0000
+.MobileVer
+    display: none
+
+@media screen and ( max-width: 992px )
+    .Header
+        display: none
+    .MobileVer
+        display: block
+        width: 100%
+        .MobileVerWrapper
+            .UserSearchBlock
+                position: fixed
+                z-index: 999999999999999999999
+                display: flex
+                justify-content: center
+                padding: 1rem 0.5rem
+                width: 100%
+                background: #fff
+                display: flex
+                justify-content: space-evenly
+                .Logo
+                    width: 10%
+                    display: inline-block
+                    font-family: Poppins
+                    font-size: 1.5rem
+                    font-weight: 500
+                    font-stretch: normal
+                    font-style: normal
+                    line-height: 1
+                    letter-spacing: normal
+                    text-align: center
+                    color: #000
+                    text-decoration: none
+                .UserSearch
+                    padding: 0.1rem 0
+                    width: 80%
+                    background: #fff
+                    border: solid 1px #000
+                    border-radius: 0.5rem
+            .MobileVerUserOpt
+                background: #fff
+                position: fixed
+                z-index: 999999999999999999999
+                bottom: 0
+                display: flex
+                justify-content: space-between
+                width: 100%
+                padding: 1rem 2rem
+                .LinkItem
+                    display: flex
+                    flex-direction: column
+                    align-items: center
+                    text-decoration: none
+                    color: #000
+                    font-size: .8rem
+                    .fa-ico
+                        font-size: 2rem
+
+@media screen and ( max-width: 757px )
+    .MobileVer
+        .MobileVerWrapper
+            .UserSearchBlock
+                padding: 1rem 0
+                justify-content: space-around
+                .Logo
+                    width: 10%
+                .UserSearch
+                    padding: 0.1rem 0
+                    width: 70%
+                    background: #fff
+                    border: solid 1px #000
+                    border-radius: 0.5rem
+
+@media screen and ( max-width: 498px )
+    .MobileVer
+        .MobileVerWrapper
+            .UserSearchBlock
+                padding: 1rem 0
+                justify-content: space-around
+                .Logo
+                    width: 10%
+                .UserSearch
+                    width: 50%
+            .MobileVerUserOpt
+                padding: 1rem 1rem
+                .LinkItem
+                    .fa-ico
+                        font-size: 1.5rem
+
+@media screen and ( max-width: 335px )
+    .MobileVer
+        .MobileVerWrapper
+            .UserSearchBlock
+                padding: 1rem 0
+                justify-content: space-around
+                .Logo
+                    display: none
+                .UserSearch
+                    width: 90%
+                

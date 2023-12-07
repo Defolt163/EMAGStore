@@ -1,0 +1,101 @@
+.ProductPage
+    padding-top: 3rem
+    .ProductPageWrapper
+        display: flex
+        justify-content: space-evenly
+        .ProductImage
+            position: relative
+            width: 30%
+            height: 100%
+            padding-top: 30%
+            flex-shrink: 0
+            .ProductStatus
+                position: absolute
+                top: 1rem
+                left: 2rem
+                margin-bottom: 5px
+                padding: 0.25rem 0.875rem
+                border-radius: 0.25rem
+                background-color: #fff
+        .ProductInfo
+            width: 55%
+            .ProductName
+                margin-top: 1rem
+                color: #141718
+                font-family: Poppins
+                font-size: 2.5rem
+                font-style: normal
+                font-weight: 500
+                line-height: 2.75rem
+                letter-spacing: -0.025rem
+            .ProductDescr
+                margin: 1rem 0 2rem 0
+                width: 90%
+                color: #6C7275
+                font-family: Inter
+                font-size: 1rem
+                font-style: normal
+                font-weight: 400
+                line-height: 1.625rem
+            .ProductPrice
+                margin-bottom: 3rem
+                color: #121212
+                font-family: Poppins
+                font-size: 1.75rem
+                font-style: normal
+                font-weight: 500
+                line-height: 2.125rem
+                letter-spacing: -0.0375rem
+            .ProductActions
+                display: flex
+                align-items: center
+                .ProductCountAction
+                    display: inline-block
+                    .CartItemPieceWrapper
+                        display: flex
+                        border: 1px solid #000
+                        border-radius: 0.5rem
+                        margin-right: 1rem
+                        .PiecesNumber
+                            display: flex
+                            align-items: center
+                        .CartItemPieceIteration
+                            cursor: pointer
+                            padding: 0.5rem 1rem
+                .ProductAddToCart
+                    cursor: pointer
+                    padding: 1rem 0
+                    width: 30%
+                    border-radius: 0.5rem
+                    background-color: #141718
+                    font-family: Inter
+                    font-size: 1rem
+                    font-style: normal
+                    font-weight: 500
+                    color: #fff
+                    text-align: center
+
+                
+
+
+@media screen and ( max-width: 992px )
+    .ProductPage
+        padding-top: 70px
+        .ProductPageWrapper
+            .ProductImage
+                width: 45%
+                padding-top: 44%
+            .ProductInfo
+                width: 45%
+
+@media screen and ( max-width: 690px )
+    .ProductPage
+        padding-top: 70px
+        .ProductPageWrapper
+            flex-direction: column
+            .ProductImage
+                margin: 0 auto
+                width: 70%
+                padding-top: 70%
+            .ProductInfo
+                width: 100%

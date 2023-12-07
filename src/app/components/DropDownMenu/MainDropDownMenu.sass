@@ -1,0 +1,26 @@
+.MainDropDownMenu
+    display: none
+    position: absolute
+    top: 60px
+    left: 50%
+    transform: translateX(-50%)
+    border: solid 1px #000
+    background-color: #fdfdfd
+    border-end-end-radius: 0.5rem
+    border-end-start-radius: 0.5rem
+    padding: 0.5rem
+    z-index: 999999
+    .MainDropDownMenuBlock
+        display: flex
+        flex-direction: column
+        .MainDropDownMenuItem
+            text-align: center
+            border-bottom: 1px solid #4b4b4b
+            color: #000
+            font-size: 1rem
+            padding: 0.5rem 3.8rem
+            text-decoration: none
+            &:hover
+                border-bottom: 1px solid #e00b0b
+    &.active
+        display: block

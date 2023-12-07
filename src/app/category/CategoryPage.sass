@@ -1,0 +1,127 @@
+.CategoryPage
+    margin-top: 6rem
+    .CategoryPageWrapper
+        display: flex
+        .CategoryOptions
+            width: 20%
+            .OptionsWrapper
+                position: sticky
+                top: 2rem
+                .OptionsBlock
+                    padding: 1rem
+                    border-radius: 0.5rem
+                    width: 90%
+                    background-color: #ebebeb
+                    border: solid 1px #8d8d8d
+                    margin-bottom: 1rem
+                    .OptionsBlockHeader
+                        font-size: 1rem
+                        font-weight: 600
+                    .UlOptions
+                        list-style: none
+                        padding: 0
+                        .UlOptionItem
+                            cursor: pointer
+                            padding-left: 1rem
+                            label
+                                cursor: pointer
+                        .Classification
+                            display: block
+                        .active
+                            background-color: #dadada
+                            font-weight: 500
+        .ProductSlide
+            width: 80%
+            position: relative
+            .RenderMethodWrapper
+                margin-bottom: 3.5rem
+                display: flex
+                justify-content: space-between
+                font-size: 1rem
+                position: absolute
+                top: 0
+                left: 0
+                .RenderMethod
+                    display: flex
+                    align-items: center
+                    i
+                        font-size: 1.5rem
+                .RenderMethodFilter
+                    display: none
+            .ProductCardItems
+                margin-top: 3.5rem
+                .ProductCard 
+                    width: 22%
+
+@media screen and ( max-width: 1067px )
+    .CategoryPage
+        .CategoryPageWrapper
+            .CategoryOptions
+                width: 30%
+            .ProductSlide
+                width: 70%
+                .ProductCardItems
+                    .ProductCard 
+                        width: 30%
+
+@media screen and ( max-width: 992px )
+    .CategoryPage
+        margin: 0
+        padding-top: 6rem
+        .CategoryPage
+        .CategoryPageWrapper
+            margin-bottom: 84px
+            .CategoryOptions
+                width: 30%
+                .OptionsBlock 
+                    .UlOptions 
+                        .UlOptionItem
+                            padding: 1rem 0 1rem 1rem
+            .ProductSlide
+                width: 70%
+                .ProductCardItems
+                    .ProductCard 
+                        width: 30%
+
+@media screen and ( max-width: 726px )
+    .CategoryPage
+        margin: 0
+        padding-top: 6rem
+        .CategoryPageWrapper
+            .CategoryOptions
+                width: 30%
+            .ProductSlide
+                width: 70%
+                .ProductCardItems
+                    .ProductCard 
+                        width: calc( 50% - 1.5rem )
+
+@media screen and ( max-width: 662px )
+    .CategoryPage
+        margin: 0
+        padding-top: 6rem
+        .CategoryPageWrapper
+            flex-direction: column
+            position: relative
+            .OptionsWrapper
+                position: relative
+                top: 0
+                .OptionsBlock
+                    margin: 0 auto
+            .CategoryOptions
+                display: none
+                margin-top: 3rem
+                width: 100%
+            .active
+                display: block
+            .ProductSlide
+                margin-top: 3rem
+                position: unset
+                width: 100%
+                .RenderMethodWrapper
+                    width: 100%
+                    .RenderMethod
+                        i
+                            font-size: 2rem
+                    .RenderMethodFilter
+                        display: block

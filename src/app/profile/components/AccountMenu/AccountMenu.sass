@@ -1,0 +1,62 @@
+.AccountMenu
+    width: 25%
+    .AccountMenuWrapper
+        position: sticky
+        top: 4rem
+        width: 90%
+        padding: 3rem
+        border-radius: 0.5rem
+        background-color: #F3F5F7
+        .ProfileName
+            font-family: Inter
+            font-size: 1.25rem
+            font-weight: 600
+            margin-bottom: 2.5rem
+        .AccountMenuItems
+            color: #6C7275
+            font-feature-settings: 'clig' off, 'liga' off
+            font-family: Inter
+            font-size: 1rem
+            font-style: normal
+            font-weight: 600
+            line-height: 1.625rem
+            .AccountMenuItem
+                cursor: pointer
+                color: #6C7275
+                text-decoration: none
+                display: block
+                padding: 0.5rem 0
+            .active
+                color: #000
+                position: relative
+                &::after
+                    position: absolute
+                    bottom: 0
+                    left: 0
+                    height: 1px
+                    width: 100%
+                    background-color: #000
+                    content: ''
+    
+@media screen and ( max-width: 992px )
+    .AccountMenu 
+        .AccountMenuWrapper
+            padding: 1rem
+    
+@media screen and ( max-width: 592px )
+    .AccountMenu
+        width: 0%
+        .AccountMenuWrapper
+            position: absolute
+            z-index: 99999
+            left: 0
+            top: 0
+            width: 100%
+            display: flex
+            flex-direction: column
+            .ProfileName
+                margin: 0
+            .AccountMenuItems
+                display: flex
+                justify-content: space-between
+                flex-wrap: wrap
