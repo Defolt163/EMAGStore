@@ -42,7 +42,7 @@ export default function RegisterPage(){
 
     function SendAccount(){
         registeredAccounts.some(account => account.email === inputEmail) ? alert('Аккаунт с таким Email Уже зарегистрирован') : 
-        inputEmail === '' || inputPassword === '' ? alert(`Пожалуйста, заполните необходимые поля: ${inputPassword === '' ? 'Пароль' : 'Email'}`) :
+        inputEmail === '' || inputPassword === '' ? alert(`Пожалуйста, заполните необходимые поля: ${inputPassword === '' ? 'Пароль' : inputEmail === '' ? 'Email' : 'Email и Пароль'}`) :
         fetch('https://65605efe83aba11d99d0b111.mockapi.io/Users',{
         method: 'POST',
         body: JSON.stringify(setAccount),
