@@ -54,6 +54,7 @@
 
     // добавление в корзину
     export function addToCart(productId) {
+      if(userLogginIn === true){
         fetch(`https://65605efe83aba11d99d0b111.mockapi.io/Users/${userId}`, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
@@ -82,6 +83,9 @@
         .catch(error => {
             console.error(error);
         });
+      }else{
+        alert("Вам необходимо авторизоваться")
+      }
     }
 
     // Получение длины массива корзины пользователя
