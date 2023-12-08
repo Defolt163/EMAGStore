@@ -29,7 +29,20 @@ export default function RegisterPage(){
         address_apartment: ''
     }
 
+    const [registeredAccounts, setRegisteredAccounts] = useState([])
+    function GetAccountEmail(){
+        fetch('https://65605efe83aba11d99d0b111.mockapi.io/Users',{
+            method: 'GET'
+        })
+        .then((res)=>res.json())
+        .then((accounts)=>{
+            setRegisteredAccounts(accounts)
+        })
+    }
+
     function SendAccount(){
+        registeredAccounts.some(account => account.email === inputEmail) ? alert('Аккаунт с таким Email Уже зарегистрирован') : 
+        inputEmail === '' || inputPassword === '' ? alert(`Пожалуйста, заполните необходимые поля: ${inputPassword === '' ? 'Пароль' : 'Email'}`) :
         fetch('https://65605efe83aba11d99d0b111.mockapi.io/Users',{
         method: 'POST',
         body: JSON.stringify(setAccount),
@@ -46,10 +59,12 @@ export default function RegisterPage(){
             console.log("Error", error)
             alert("Произошла ошибка регистрации, повторите снова")
         })
+
     }
 
     useEffect(() => {
         document.title = 'Регистрация'
+        GetAccountEmail()
       }, []);
 
 
